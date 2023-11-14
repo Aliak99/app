@@ -1,9 +1,11 @@
 <?php
+require __DIR__ . '/database/database.php';
 $authDB = require __DIR__ . '/database/security.php';
 $currentUser = $authDB->isLoggedin();
 $articleDB = require_once __DIR__ . '/database/models/ArticleDB.php';
 $articles = $articleDB->fetchAll();
 $categories = [];
+
 
 $_GET = filter_input_array(INPUT_GET, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 $selectedCat = $_GET['cat'] ?? '';
@@ -30,9 +32,6 @@ if (count($articles)) {
 
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +43,9 @@ if (count($articles)) {
 
 <body>
     <div class="container">
+
         <?php require_once 'includes/header.php' ?>
+
         <div class="content">
             <div class="newsfeed-container">
                 <ul class="category-container">
@@ -89,7 +90,9 @@ if (count($articles)) {
                 </div>
             </div>
         </div>
+
         <?php require_once 'includes/footer.php' ?>
+
     </div>
 
 </body>
