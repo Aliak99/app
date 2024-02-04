@@ -29,7 +29,7 @@ if (!$id) {
         <?php require_once 'includes/header.php' ?>
         <div class="content">
             <div class="article-container">
-                <a class="article-back" href="/">Retour à la liste des articles</a>
+                <a class="article-back" href="/">Retour à la liste de tous les articles</a>
                 <div class="article-cover-img" style="background-image:url(<?= $article['image'] ?>)"></div>
                 <h1 class="article-title"><?= $article['title'] ?></h1>
                 <div class="separator"></div>
